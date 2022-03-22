@@ -11,28 +11,22 @@
  * \author (2016) Artur Pereira <artur at ua.pt>
  */
 
-#ifndef __SO_IPC_PRODUCER_CONSUMER_FIFO_
-#define __SO_IPC_PRODUCER_CONSUMER_FIFO_
 
 /**
  * \brief Init the fifo 
  */
-void fifoInit(void);
+void  MyFIFOInit(void);
 
 /**
  *  \brief Insertion of a value into the FIFO.
- *
- * \param id id of the producer
  * \param value value to be stored
  */
-void fifoIn (unsigned int id, unsigned int value);
+void MyFIFOInsert(unsigned int value);
 
 /**
  *  \brief Retrieval of a value from the FIFO.
- *
- * \param idp pointer to recipient where to store the producer id
  * \param valuep pointer to recipient where to store the value 
  */
-void fifoOut (unsigned int * idp, unsigned int  *valuep);
+void MyFIFORemove (unsigned int  *valuep);
 
 #endif /* __SO_IPC_PRODUCER_CONSUMER_FIFO_ */
