@@ -1,14 +1,13 @@
 /**
  *  @file 
  *
- *  @brief A simple FIFO, whose elements are pairs of integers,
- *      one representing the producer and the other the value produced
+ *  @brief A simple FIFO.
  *
  *  The following operations are defined:
  *     \li insertion of a value
  *     \li retrieval of a value.
  *
- * \author (2016) Artur Pereira <artur at ua.pt>
+ * \author Marco Santos 83192, Daniel Almeida 85111
  */
 
 
@@ -29,4 +28,16 @@ void MyFIFOInsert(unsigned int value);
  */
 void MyFIFORemove (unsigned int  *valuep);
 
-#endif /* __SO_IPC_PRODUCER_CONSUMER_FIFO_ */
+/**
+ * @brief Returns the oldest element on the FIFO, but does not remove it
+ * 
+ * @return int 
+ */
+int MyFIFOPeep(void);
+
+/**
+ * @brief Returns the number of elements on the FIFO
+ * 
+ * @return int 
+ */
+int MyFIFOSize(void);

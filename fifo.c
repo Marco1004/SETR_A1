@@ -48,8 +48,8 @@ void MyFIFOInsert(unsigned int value)
 
 void MyFIFORemove (unsigned int * valuep)
 {
-    if(){
-        printf("FIFO is empty.")
+    if(fifo.cnt<= 0){
+        printf("FIFO is empty.");
     }
     *valuep = fifo.slot[fifo.ri].value;
     fifo.slot[fifo.ri].value = 99999999;
