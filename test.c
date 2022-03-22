@@ -62,6 +62,7 @@ int main(int fifo_size)
 	MyFIFOInsert(7);
 
 	//Remove more than Size after add more than size
+	MyFIFOSize();
 	MyFIFOPeep();
 	MyFIFORemove();
 	MyFIFOPeep();
@@ -78,6 +79,9 @@ int main(int fifo_size)
 	MyFIFORemove();
 	MyFIFOPeep();
 	MyFIFORemove();
+	MyFIFOSize();
+
+	printf("Acabou o teste!\n");
 
 
 	return 0;
