@@ -1,7 +1,9 @@
+/*
 #include <stdio.h>
 #include <unistd.h>
 #include <stdbool.h>
 #include <errno.h>
+*/
 
 #include "fifo.h"
 
@@ -35,7 +37,6 @@ void MyFIFOInit(void)
     fifo.cnt = 0;
 }
 
-
 void MyFIFOInsert(unsigned int value)
 {
     if (fifo.cnt>= FIFOSZ){
@@ -57,4 +58,10 @@ void MyFIFORemove (unsigned int * valuep)
     fifo.cnt--;
 }
 
-/* ************************************************* */
+int MyFIFOPeep(void){
+    return fifo.slot[fifo.ri].value;
+}
+
+int MyFIFOSize(void){
+    return fifo.cnt;
+}
