@@ -17,16 +17,15 @@
 void  MyFIFOInit(void);
 
 /**
- *  \brief Insertion of a value into the FIFO.
+ *  \brief Adds an element to the FIFO
  * \param value value to be stored
  */
 void MyFIFOInsert(unsigned int value);
 
 /**
- *  \brief Retrieval of a value from the FIFO.
- * \param valuep pointer to recipient where to store the value 
+ *  \brief Removes and element from the FIFO
  */
-void MyFIFORemove (unsigned int  *valuep);
+void MyFIFORemove (void);
 
 /**
  * @brief Returns the oldest element on the FIFO, but does not remove it

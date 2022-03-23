@@ -1,10 +1,4 @@
-/*
 #include <stdio.h>
-#include <unistd.h>
-#include <stdbool.h>
-#include <errno.h>
-*/
-
 #include "fifo.h"
 
 #define  FIFOSZ         5
@@ -47,12 +41,11 @@ void MyFIFOInsert(unsigned int value)
     fifo.cnt++;
 }
 
-void MyFIFORemove (unsigned int * valuep)
+void MyFIFORemove()
 {
     if(fifo.cnt<= 0){
         printf("FIFO is empty.");
     }
-    *valuep = fifo.slot[fifo.ri].value;
     fifo.slot[fifo.ri].value = 99999999;
     fifo.ri = fifo.ri + 1;
     fifo.cnt--;
