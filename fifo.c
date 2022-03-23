@@ -29,30 +29,41 @@ void MyFIFOInit(void)
     }
     fifo.ii = fifo.ri = 0;
     fifo.cnt = 0;
+    printf("FIFO de tamanho %d criado.\n",FIFOSZ);
 }
 
 void MyFIFOInsert(unsigned int value)
 {
     if (fifo.cnt>= FIFOSZ){
-        printf("FIFO is full.");
+        printf("FIFO is full.\n");
     }
-    fifo.slot[fifo.ii].value = value;
-    fifo.ii = fifo.ii + 1;
-    fifo.cnt++;
+    else{
+    	fifo.slot[fifo.ii].value = value;
+    	fifo.ii = fifo.ii + 1;
+    	fifo.cnt++;	
+    }
+    
 }
 
 void MyFIFORemove()
 {
     if(fifo.cnt<= 0){
-        printf("FIFO is empty.");
+        printf("FIFO is empty.\n");
     }
-    fifo.slot[fifo.ri].value = 99999999;
-    fifo.ri = fifo.ri + 1;
-    fifo.cnt--;
+    else{
+	    fifo.slot[fifo.ri].value = 99999999;
+	    fifo.ri = fifo.ri + 1;
+	    fifo.cnt--;	
+    }
 }
 
 int MyFIFOPeep(void){
-    return fifo.slot[fifo.ri].value;
+    if(fifo.cnt<= 0){
+        return 99999999;
+    }
+    else{
+        return fifo.slot[fifo.ri].value;
+    }
 }
 
 int MyFIFOSize(void){
